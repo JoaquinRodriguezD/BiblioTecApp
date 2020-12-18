@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText usr, passwd;
+    TextView aqui;
     Context context;
 
     @Override
@@ -26,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
         usr = (EditText) findViewById(R.id.username);
         passwd = (EditText) findViewById(R.id.password);
+        aqui = (TextView) findViewById(R.id.nuevo);
+        aqui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registro();
+            }
+        });
     }
 
     public void onClick(View view) {
@@ -44,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void registro(View view){
-        Intent i = new Intent();
-        i.setClass(context.getApplicationContext(), RegistroUsuario.class);
-        context.startActivity(i);
+    public void registro(){
+        Intent i = new Intent(this, RegistroUsuario.class);
+        startActivity(i);
     }
 }
