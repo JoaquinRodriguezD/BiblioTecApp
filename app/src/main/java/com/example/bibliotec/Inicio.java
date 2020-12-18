@@ -24,13 +24,16 @@ public class Inicio extends AppCompatActivity {
 
         datos = (TextView) findViewById(R.id.datos);
         datos.setText(user);
-        inicio_helper bg = new inicio_helper(this);
-        bg.execute(user);
+        inicio_helper helper = new inicio_helper(this);
+        helper.execute(datos.getText().toString());
     }
-/*
+
     public void libros(View view) {
 
-        inicio_helper bg = new inicio_helper(this);
-        bg.execute(user);
-    }*/
+        datos = (TextView) findViewById(R.id.datos);
+        String user = datos.getText().toString();
+        inicio_helper2 helper2 = new inicio_helper2(this);
+        helper2.execute(user);
+
+    }
 }

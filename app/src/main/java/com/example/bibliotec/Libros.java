@@ -8,7 +8,7 @@ import android.os.Bundle;
 public class Libros extends AppCompatActivity {
 
     Intent intent = getIntent();
-    String user = intent.getStringExtra(inicio_helper.EXTRA_TEXT);
+    String user = intent.getStringExtra(inicio_helper2.EXTRA_TEXT);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

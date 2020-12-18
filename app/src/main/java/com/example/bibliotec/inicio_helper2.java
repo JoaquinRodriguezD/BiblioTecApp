@@ -18,12 +18,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class inicio_helper extends AsyncTask<String, Void, String> {
+public class inicio_helper2 extends AsyncTask<String, Void, String> {
 
+    public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
     AlertDialog dialog;
     Context context;
 
-    public inicio_helper(Context context) {
+    public inicio_helper2(Context context) {
         this.context = context;
     }
 
@@ -31,7 +32,7 @@ public class inicio_helper extends AsyncTask<String, Void, String> {
     protected void onPreExecute() {
 
         dialog = new AlertDialog.Builder(context).create();
-        dialog.setTitle("Registros");
+        dialog.setTitle("Ver libros");
     }
 
     @Override
@@ -39,6 +40,17 @@ public class inicio_helper extends AsyncTask<String, Void, String> {
 
         dialog.setMessage(s);
         dialog.show();
+
+        if (s.contains("Ver libros")) {
+
+            EditText usr = (EditText) ((MainActivity) context).findViewById(R.id.username);
+            String user = usr.getText().toString();
+
+            Intent i = new Intent();
+            i.setClass(context.getApplicationContext(), Libros.class);
+            i.putExtra(EXTRA_TEXT, user);
+            context.startActivity(i);
+        }
     }
 
     @Override

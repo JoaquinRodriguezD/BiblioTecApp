@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void registro(View view){
         Intent i = new Intent();
-        i.setClass(context.getApplicationContext(), Inicio.class);
+        i.setClass(context.getApplicationContext(), RegistroUsuario.class);
         context.startActivity(i);
     }
 }

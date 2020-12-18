@@ -61,7 +61,7 @@ public class background extends AsyncTask<String, Void, String> {
         String user = voids[0];
         String pass = voids[1];
 
-        String host = "http://192.168.1.3:80/biblioTec/login.php";
+        String host = "http://192.168.1.3:80/bibliotec/login.php";
 
         try {
 
